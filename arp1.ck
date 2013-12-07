@@ -1,7 +1,8 @@
 ModalBar bar => NRev rev => dac;
 0.05 => rev.mix;
 0.5 => bar.strikePosition;
-0.75::second => dur quarter;
+BPM bpm;
+bpm.quarterNote => dur quarter;
 0 => bar.gain;
 [0, 49, 50, 52, 54, 56, 57, 59, 61] @=> int scale[];
 [1, 4, 5, 6, 8] @=> int arpDegrees[];

@@ -1,12 +1,12 @@
 Bowed bow => NRev rev => dac;
-
+BPM bpm;
+bpm.quarterNote => dur quarter;
 Std.atoi(me.arg(0)) => int note1;
 Std.atoi(me.arg(1)) => int note2;
 
 0.1 => bow.bowPressure;
 0.9 => bow.bowPosition;
 0.2 => rev.mix;
-0.75::second => dur quarter;
 
 while(true) {
     Std.mtof(note1) => bow.freq;

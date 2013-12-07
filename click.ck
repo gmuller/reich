@@ -1,4 +1,5 @@
-0.75::second => dur quarter;
+BPM bpm;
+bpm.quarterNote => dur quarter;
 ModalBar click => NRev rev => dac;
 0.05 => rev.mix;
 0.1 => click.stickHardness;

@@ -1,5 +1,6 @@
 BandedWG flute => NRev rev => dac.right;
-0.75::second => dur quarter;
+BPM bpm;
+bpm.quarterNote => dur quarter;
 1 => flute.preset;
 0.15 => rev.mix;
 

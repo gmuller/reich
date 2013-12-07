@@ -1,4 +1,5 @@
-0.75::second => dur quarter;
+BPM bpm;
+bpm.quarterNote => dur quarter;
 BandedWG bass => Gain master => dac;
 [0, 49, 50, 52, 54, 56, 57, 59, 61] @=> int scale[];
 [6, 6, 0, 6, 6, 6, 6, 6] @=> int bassDegrees[];

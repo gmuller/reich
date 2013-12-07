@@ -1,4 +1,6 @@
-0.75::second => dur quarter;
+BPM bpm;
+90 => bpm.tempo;
+bpm.quarterNote => dur quarter;
 me.dir() + "/kick.ck" => string kickPath;
 me.dir() + "/bass.ck" => string bassPath;
 me.dir() + "/arp1.ck" => string arpPath;

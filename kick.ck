@@ -3,7 +3,8 @@ ModalBar bar => NRev rev => dac;
 7 => bar.preset;
 0.9 => bar.stickHardness;
 Std.mtof(57) => bar.freq;
-0.75::second => dur quarter;
+BPM bpm;
+bpm.quarterNote => dur quarter;
 [57, 57, 61, 59] @=> int kickPitches[];
 
 0 => int counter;
