@@ -14,8 +14,9 @@ There are two different ways to initialize and run the composition, depending on
 ### 1. Multi-Channel Version
 This version assigns each instrument to different stereo pairs, allowing for spatial separation in the mix:
 ```bash
-chuck initialize.ck
+chuck --dac:4 --out:18 initialize.ck
 ```
+Where your dac number is the number of the audio interface you're using. 
 
 ### 2. Standard Stereo Version
 This version routes all instruments to the standard stereo output (channels 0 and 1):
