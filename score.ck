@@ -1,15 +1,27 @@
 BPM bpm;
-90 => bpm.tempo;
+80 => bpm.tempo;
 bpm.quarterNote => dur quarter;
-me.dir() + "/kick.ck" => string kickPath;
-me.dir() + "/bass.ck" => string bassPath;
-me.dir() + "/arp1.ck" => string arpPath;
-me.dir() + "/arp2.ck" => string arp2Path;
-me.dir() + "/click.ck" => string clickPath;
-me.dir() + "/strings1.ck:33:37" => string strings1Path;
-me.dir() + "/strings1.ck:40:44" => string strings2Path;
-me.dir() + "/strings1.ck:49:52" => string strings3Path;
-me.dir() + "/flute.ck" => string flutePath;
+
+// Get channel assignments from initialize.ck
+global int kickChannels[];
+global int clickChannels[];
+global int bassChannels[];
+global int arp1Channels[];
+global int arp2Channels[];
+global int strings1Channels[];
+global int strings2Channels[];
+global int strings3Channels[];
+global int fluteChannels[];
+
+me.dir() + "/kick.ck:" + kickChannels[0] + ":" + kickChannels[1] => string kickPath;
+me.dir() + "/bass.ck:" + bassChannels[0] + ":" + bassChannels[1] => string bassPath;
+me.dir() + "/arp1.ck:" + arp1Channels[0] + ":" + arp1Channels[1] => string arpPath;
+me.dir() + "/arp2.ck:" + arp2Channels[0] + ":" + arp2Channels[1] => string arp2Path;
+me.dir() + "/click.ck:" + clickChannels[0] + ":" + clickChannels[1] => string clickPath;
+me.dir() + "/strings1.ck:" + strings1Channels[0] + ":" + strings1Channels[1] + ":33:37" => string strings1Path;
+me.dir() + "/strings1.ck:" + strings2Channels[0] + ":" + strings2Channels[1] + ":40:44" => string strings2Path;
+me.dir() + "/strings1.ck:" + strings3Channels[0] + ":" + strings3Channels[1] + ":49:52" => string strings3Path;
+me.dir() + "/flute.ck:" + fluteChannels[0] + ":" + fluteChannels[1] => string flutePath;
 
 Machine.add(kickPath) => int kickID;
 Machine.add(clickPath) => int clickID;

@@ -1,4 +1,4 @@
-// initialize.ck
+// initialize_midi.ck - MIDI clock sync version
 
 // Channel assignments for each instrument
 // Format: instrument_name => [left_channel, right_channel]
@@ -14,19 +14,20 @@ global int fluteChannels[2];
 
 // Set channel assignments
 [0, 1] @=> kickChannels;
-[2, 3] @=> clickChannels;
-[4, 5] @=> bassChannels;
-[6, 7] @=> arp1Channels;
-[8, 9] @=> arp2Channels;
-[10, 11] @=> strings1Channels;
-[12, 13] @=> strings2Channels;
-[14, 15] @=> strings3Channels;
-[16, 17] @=> fluteChannels;
+[0, 1] @=> clickChannels;
+[0, 1] @=> bassChannels;
+[0, 1] @=> arp1Channels;
+[0, 1] @=> arp2Channels;
+[0, 1] @=> strings1Channels;
+[0, 1] @=> strings2Channels;
+[0, 1] @=> strings3Channels;
+[0, 1] @=> fluteChannels;
 
-//Add Clock
-me.dir() + "/BPM.ck" => string clockPath;
-Machine.add(clockPath);
+// Add MIDI Clock
+me.dir() + "/MIDIClock.ck" => string midiClockPath;
+Machine.add(midiClockPath) => int midiClockID;
+1::ms => now;  // Give it a moment to initialize
 
 // add score.ck
 me.dir() + "/score.ck" => string scorePath;
-Machine.add(scorePath);
+Machine.add(scorePath); 

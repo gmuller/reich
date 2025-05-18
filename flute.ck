@@ -1,4 +1,14 @@
-BandedWG flute => NRev rev => dac.right;
+BandedWG flute => NRev rev;
+
+// Get channel numbers from command line arguments
+Std.atoi(me.arg(0)) => int leftChan;
+Std.atoi(me.arg(1)) => int rightChan;
+
+Gain gL => dac.chan(leftChan);  // Left channel
+Gain gR => dac.chan(rightChan); // Right channel
+rev => gL;
+rev => gR;
+
 BPM bpm;
 bpm.quarterNote => dur quarter;
 1 => flute.preset;
