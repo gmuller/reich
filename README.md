@@ -9,7 +9,7 @@ I wrote this song to learn audio coding with ChucK. Its a simple composition ins
 
 ## Starting the Composition
 
-There are three different ways to initialize and run the composition, depending on your setup and requirements:
+There are two different ways to initialize and run the composition, depending on your setup and requirements:
 
 ### 1. Multi-Channel Version
 This version assigns each instrument to different stereo pairs, allowing for spatial separation in the mix:
